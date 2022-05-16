@@ -2,23 +2,16 @@ const Graph = require('./graph')
 const { readFile } = require('fs/promises')
 ;
 class File {
-
     static async parseFileContent(fileContent) {
-        const lines = fileContent.split("\n");
-        var map = new Map();
-        map = lines.map(line => {
-            console.log(line)
+        const lines = fileContent.split("\n")
+        let map = new Map()
+        lines.map(line => {
             const colums = line.split(',')
-            console.log(colums)
             for (const index in colums) {
-                console.log(index)
-                const [movieTitle, ...cast] = index.split("\'")
-                console.log(movieTitle)
+                const [movieTitle, cast] = colums[index].split("/", 2)
                 map.set(movieTitle, cast)
             }
-            return map;
         })
-        //console.log(map)
         return map;
     }
 
