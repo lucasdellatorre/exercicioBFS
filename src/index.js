@@ -24,5 +24,14 @@ class File {
 (async () => {
     const content = await File.getFileContent('./movies.txt');
     const map = await File.parseFileContent(content);
+    //console.log(map)
+    g = new Graph(12000);
+    
+    map.forEach((key, value) => {
+        g.addVertex(key)
+        g.addVertex(value)
+        g.addEdge(key, value)
+    })
+
   })();
   

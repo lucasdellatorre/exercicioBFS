@@ -37,10 +37,10 @@ class Graph {
     {
     
         // create a visited object
-        var visited = {};
+        let visited = {};
     
         // Create an object for queue
-        var q = new Queue();
+        let q = new Queue();
     
         // add the starting node to the queue
         visited[startingNode] = true;
@@ -49,18 +49,18 @@ class Graph {
         // loop until queue is empty
         while (!q.isEmpty()) {
             // get the element from the queue
-            var getQueueElement = q.dequeue();
+            let getQueueElement = q.dequeue();
     
             // passing the current vertex to callback function
             console.log(getQueueElement);
     
             // get the adjacent list for current vertex
-            var get_List = this.AdjList.get(getQueueElement);
+            let get_List = this.AdjList.get(getQueueElement);
     
             // loop through the list and add the element to the
             // queue if it is not processed yet
-            for (var i in get_List) {
-                var neigh = get_List[i];
+            for (let i in get_List) {
+                let neigh = get_List[i];
     
                 if (!visited[neigh]) {
                     visited[neigh] = true;
@@ -72,26 +72,25 @@ class Graph {
     printGraph()
     {
         // get all the vertices
-        var get_keys = this.AdjList.keys();
+        let get_keys = this.AdjList.keys();
     
         // iterate over the vertices
-        for (var i of get_keys)
+        for (let i of get_keys)
     {
             // great the corresponding adjacency list
             // for the vertex
-            var get_values = this.AdjList.get(i);
-            var conc = "";
+            let get_values = this.AdjList.get(i);
+            let conc = "";
     
             // iterate over the adjacency list
             // concatenate the values into a string
-            for (var j of get_values)
+            for (let j of get_values)
                 conc += j + " ";
     
             // print the vertex and its adjacency list
             console.log(i + " -> " + conc);
         }
     }
-	// dfs(v)
 }
 
 module.exports = Graph;
