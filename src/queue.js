@@ -1,10 +1,14 @@
 // Queue class
 class Queue {
+
   // Array is used to implement a Queue
   constructor() {
     this.items = [];
   }
 
+  size() {
+    return this.items.length;
+  }
   // enqueue function
   enqueue(element) {
     // adding element to the queue
@@ -18,7 +22,7 @@ class Queue {
     return this.items.shift();
   }
   // front function
-  front() {
+  peek() {
     // returns the Front element of
     // the queue without removing it.
     if (this.isEmpty()) return "No elements in Queue";

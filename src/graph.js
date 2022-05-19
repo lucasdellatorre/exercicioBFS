@@ -30,7 +30,7 @@ class Graph {
   // printGraph()
 
   // function to performs BFS
-  bfs(startingNode) {
+  bfs(actor1, actor2) {
     // create a visited object
     let visited = {};
 
@@ -38,11 +38,12 @@ class Graph {
     let q = new Queue();
 
     // add the starting node to the queue
-    visited[startingNode] = true;
-    q.enqueue(startingNode);
+    visited[actor1] = true;
+    q.enqueue(actor1);
 
     // loop until queue is empty
-    while (!q.isEmpty()) {
+    while (q.peek() === actor2) {
+      console.log(q.peek())
       // get the element from the queue
       let getQueueElement = q.dequeue();
 
@@ -63,6 +64,7 @@ class Graph {
         }
       }
     }
+    return q.size();
   }
   printGraph() {
     // get all the vertices
@@ -83,6 +85,8 @@ class Graph {
       console.log(i + " -> " + conc);
     }
   }
+
+  
 }
 
 module.exports = Graph;

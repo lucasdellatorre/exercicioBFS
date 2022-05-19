@@ -18,12 +18,13 @@ const FILE_PATH = {
         g.addEdge(key, value)
     })
 
-    g.bfs(map.get())
-    {
-        const actor1 = 'Kevin Bacon'
-        const actor2 = 'Chuck Norris'
+    const actor1 = 'Kevin Bacon'
+    const actor2 = 'Tom Hanks'
+ 
+    console.log(g.bfs(actor1, actor2))
+    
 
-        
-    }
+    
+    
   })();
   
